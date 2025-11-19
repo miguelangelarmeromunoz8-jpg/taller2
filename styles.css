@@ -1,0 +1,183 @@
+/* =========================================
+   1. ESTILOS GENERALES Y LAYOUT PRINCIPAL
+   ========================================= */
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    overflow: hidden; /* Evita scroll general, usamos scroll interno */
+}
+
+/* Contenedor principal que divide la pantalla: Rojo | Contenido */
+.app-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.sidebar-title {
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   3. ÁREA DE CONTENIDO (DERECHA)
+   ========================================= */
+.content-area {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto; /* Scroll interno si la pantalla es pequeña */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+/* El Rectángulo Grande Blanco */
+.dashboard-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1000px; /* Ancho aumentado para caber 3 tarjetas */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05); 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #eee;
+}
+
+.section-header {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.dashboard-title {
+    font-size: 1.8em;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* =========================================
+   4. FILA DE TARJETAS (GRID HORIZONTAL)
+   ========================================= */
+.cards-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+/* Estilo de cada Tarjeta Individual */
+.inner-card {
+    background-color: #f0f4f8;
+    border: none; 
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 1; /* Divide el espacio equitativamente */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 200px;
+}
+
+.inner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: brightness(0.95); 
+}
+
+.card-body {
+    padding: 20px 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    color: #000;
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Botón Azul */
+.card-button {
+    display: inline-block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0;
+    background-color: #00bfff; /* Azul cyan */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-button:hover {
+    background-color: #009acd;
+}
+
+/* =========================================
+   5. ESTILOS PARA LA VISTA DE DETALLES
+   ========================================= */
+.details-title {
+    color: #333;
+    border-bottom: 2px solid #00bfff;
+    padding-bottom: 15px;
+    margin-top: 0;
+}
+
+.details-subtitle {
+    color: #007bff;
+    margin-top: 25px;
+}
+
+.details-info {
+    color: #444;
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 30px;
+    background-color: #6c757d;
+    color: white;
+    border-radius: 8px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
